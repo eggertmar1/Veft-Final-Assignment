@@ -81,6 +81,7 @@ namespace JustTradeIt.Software.API
 
             app.UseHttpsRedirection();
 
+            app.UseGlobalExceptionHandler();
             app.UseRouting();
 
             app.UseAuthentication();

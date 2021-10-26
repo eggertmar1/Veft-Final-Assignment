@@ -68,7 +68,7 @@ namespace JustTradeIt.Software.API.Controllers
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("logout")]
         public IActionResult LogOut()
         {
