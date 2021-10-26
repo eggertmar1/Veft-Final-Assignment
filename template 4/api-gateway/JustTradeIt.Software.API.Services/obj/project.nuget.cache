@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iiWqnGcgE59LcipXhTlD11XlkgPMbs9y+e1SV5kYHQyTbnbdRqCyrNJNxewvOysJFl8D4eD9tbLUizCYxcfLeg==",
+  "dgSpecHash": "bqMwtNU+X7Gjgh7R6lKBgGmRiosjdTou42zy6u+8bHnZX+WXXWWME7pS1NmozHXOeRH6p75SHIdHVeJLXsVoVA==",
   "success": true,
   "projectFilePath": "/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Services/JustTradeIt.Software.API.Services.csproj",
   "expectedPackageFiles": [
+    "/Users/eggertsigtryggsson/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/awssdk.core/3.7.3.20/awssdk.core.3.7.3.20.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/awssdk.s3/3.7.3.13/awssdk.s3.3.7.3.13.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.10/microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",
@@ -12,7 +14,7 @@
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore/5.0.10/microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.10/microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.10/microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",
@@ -39,6 +41,7 @@
     "/Users/eggertsigtryggsson/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.identitymodel.tokens.jwt/6.13.1/system.identitymodel.tokens.jwt.6.13.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"

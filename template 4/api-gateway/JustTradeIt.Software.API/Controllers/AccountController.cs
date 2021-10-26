@@ -9,11 +9,8 @@ namespace JustTradeIt.Software.API.Controllers
 {
     [ApiController]
     [Route("api/account")]
+    [Authorize]
     
-        // TODO: Setup routes
-
-        [Authorize]
-        [Route("api/account")]
     public class AccountController : ControllerBase
     {
         private readonly IAccountService _accountService;

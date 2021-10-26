@@ -18,4 +18,5 @@ namespace JustTradeIt.Software.API.Repositories.Helpers
         private static byte[] CreateSalt(string salt) =>
             Convert.FromBase64String(Convert.ToBase64String(Encoding.UTF8.GetBytes(salt)));
     }
+
 }

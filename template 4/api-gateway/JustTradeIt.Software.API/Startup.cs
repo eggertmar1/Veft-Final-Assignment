@@ -11,6 +11,9 @@ using JustTradeIt.Software.API.Repositories.Contexts;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using JustTradeIt.Software.API.Middlewares;
+using JustTradeIt.Software.API.Repositories.Interfaces;
+using JustTradeIt.Software.API.Repositories.Implementations;
 
 namespace JustTradeIt.Software.API
 {
@@ -27,9 +30,10 @@ namespace JustTradeIt.Software.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddDbContext<JustTradeItDbContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("TradesConnectionString"), options =>
+                options.UseSqlite(Configuration.GetConnectionString("TradesConnectionString"), options =>
                 {
                     options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
                 });
@@ -38,11 +42,11 @@ namespace JustTradeIt.Software.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JustTradeIt.Software.API", Version = "v1" });
             });
-            // services.AddAuthentication(config =>
-            // {
-            //     config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            //     config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            // }).AddJwtTokenAuthentication(Configuration); // Middleware? 
+            services.AddAuthentication(config =>
+            {
+                config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtTokenAuthentication(Configuration); // Middleware? 
 
             var jwtConfig = Configuration.GetSection("JwtConfig");
             services.AddTransient<ITokenService>((c) =>
@@ -59,6 +63,10 @@ namespace JustTradeIt.Software.API
             services.AddTransient<IQueueService, QueueService>();
             services.AddTransient<ITradeService, TradeService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IItemRepository, ItemRepository>();
+            services.AddTransient<ITokenRepository, TokenRepository>();
+            services.AddTransient<ITradeRepository, TradeRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
