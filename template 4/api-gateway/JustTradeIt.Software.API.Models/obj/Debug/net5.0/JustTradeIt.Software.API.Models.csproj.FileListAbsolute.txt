@@ -1,0 +1,12 @@
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/bin/Debug/net5.0/JustTradeIt.Software.API.Models.deps.json
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/bin/Debug/net5.0/JustTradeIt.Software.API.Models.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/bin/Debug/net5.0/ref/JustTradeIt.Software.API.Models.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/bin/Debug/net5.0/JustTradeIt.Software.API.Models.pdb
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.csproj.AssemblyReference.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.AssemblyInfoInputs.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.AssemblyInfo.cs
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.csproj.CoreCompileInputs.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/ref/JustTradeIt.Software.API.Models.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Models/obj/Debug/net5.0/JustTradeIt.Software.API.Models.pdb

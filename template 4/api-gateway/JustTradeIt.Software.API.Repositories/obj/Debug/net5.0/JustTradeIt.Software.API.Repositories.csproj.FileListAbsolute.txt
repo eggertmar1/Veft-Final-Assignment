@@ -1,0 +1,15 @@
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.csproj.AssemblyReference.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.AssemblyInfoInputs.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.AssemblyInfo.cs
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.csproj.CoreCompileInputs.cache
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/JustTradeIt.Software.API.Repositories.deps.json
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/JustTradeIt.Software.API.Repositories.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/ref/JustTradeIt.Software.API.Repositories.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/JustTradeIt.Software.API.Repositories.pdb
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/JustTradeIt.Software.API.Models.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/bin/Debug/net5.0/JustTradeIt.Software.API.Models.pdb
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.csproj.CopyComplete
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/ref/JustTradeIt.Software.API.Repositories.dll
+/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/obj/Debug/net5.0/JustTradeIt.Software.API.Repositories.pdb
