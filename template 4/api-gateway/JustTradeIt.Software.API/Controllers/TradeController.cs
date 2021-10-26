@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Security.Claims;
 using JustTradeIt.Software.API.Models.InputModels;
 using JustTradeIt.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -23,21 +24,23 @@ namespace JustTradeIt.Software.API.Controllers
         //TODO: Require authentication FOR ALL ROUTES
         [HttpGet]
         [Route("")]
-        public IActionResult GetTrades([FromBody] string email)
+        public IActionResult GetTrades([FromQuery] bool onlyCompleted, [FromQuery] bool onlyIncludeActive)
         {
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             throw new NotImplementedException();
         }
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateTradeRequest(string email, [FromBody] TradeInputModel tradeRequest)
+        public IActionResult CreateTradeRequest([FromBody] TradeInputModel tradeRequest)
         {
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             throw new NotImplementedException();
         }
 
         [HttpGet]
         [Route("{tradeIdentifier}", Name = "GetTradeByIdentifier")]
-        public IActionResult GetTradeByIdentifier(string tradeIdentifier)
+        public IActionResult GetTradeByIdentifier([FromRoute] string tradeIdentifier)
         {
             throw new NotImplementedException();
         }
@@ -46,7 +49,7 @@ namespace JustTradeIt.Software.API.Controllers
 
         [HttpPut]
         [Route("{tradeIdentifier}", Name = "UpdateTradeRequest")]
-        public IActionResult UpdateTradeRequest(string tradeIdentifier, [FromBody] string email, string status)
+        public IActionResult UpdateTradeRequest([FromRoute] string tradeIdentifier, [FromBody] string email, string status)
         {
             throw new NotImplementedException();
         }

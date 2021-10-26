@@ -1,10 +1,14 @@
 using System;
+using System.Linq;
+using System.Security.Claims;
 using JustTradeIt.Software.API.Models.InputModels;
 using JustTradeIt.Software.API.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JustTradeIt.Software.API.Controllers
 {
+    [Authorize]
     [Route("api/items")]
     [ApiController]
     public class ItemController : ControllerBase
@@ -27,7 +31,7 @@ namespace JustTradeIt.Software.API.Controllers
         
         [HttpGet]
         [Route("{identifier}", Name = "GetItemByIdentifier")]
-        public IActionResult GetItemByIdentifier(string identifier)
+        public IActionResult GetItemByIdentifier([FromRoute] string identifier)
         {
             throw new NotImplementedException();
         }
@@ -35,15 +39,17 @@ namespace JustTradeIt.Software.API.Controllers
         [HttpPost]
         [Route("")]
         //TODO: string email, i'm not sure it's in the right place but no ERRORSS!!
-        public IActionResult AddNewItem(string email, [FromBody] ItemInputModel item)
+        public IActionResult AddNewItem([FromBody] ItemInputModel item)
         {
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             throw new NotImplementedException();
         }
 
         [HttpDelete]
         [Route("{identifier}", Name = "RemoveItem")]
-        public IActionResult RemoveItem([FromBody] string email, string identifier)
+        public IActionResult RemoveItem([FromRoute] string identifier)
         {
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             throw new NotImplementedException();
         }
 

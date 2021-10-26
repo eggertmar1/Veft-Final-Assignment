@@ -20,14 +20,14 @@ namespace JustTradeIt.Software.API.Controllers
         // TODO: Require authentication FOR ALL ROUTES
         [HttpGet]
         [Route("{identifier}", Name = "GetUserInformation")]
-        public IActionResult GetUserInformation(string identifier)
+        public IActionResult GetUserInformation([FromRoute] string identifier)
         {
             throw new NotImplementedException();
         }
 
         [HttpGet]
         [Route("{identifier}", Name = "GetUserTrades")]
-        public IActionResult GetUserTrades(string identifier)
+        public IActionResult GetUserTrades([FromRoute] string identifier)
         {
             throw new NotImplementedException();
         }

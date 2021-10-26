@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Security.Claims;
 using JustTradeIt.Software.API.Models.InputModels;
 using JustTradeIt.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -28,7 +29,7 @@ namespace JustTradeIt.Software.API.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
-        public IActionResult CreateUse([FromBody] RegisterInputModel register)
+        public IActionResult CreateUser([FromBody] RegisterInputModel register)
         {
             var user = _accountService.CreateUser(register);
             if (user == null) { return Unauthorized(); }
@@ -62,14 +63,11 @@ namespace JustTradeIt.Software.API.Controllers
 
         [HttpPut]
         [Route("profile")]
-        public IActionResult UpdateProfile()
+        public IActionResult UpdateProfile([FromForm] ProfileInputModel profile)
         {
-            var claims = User.Claims.Select(c => new
-            {
-                Type = c.Type,
-                Value = c.Value
-            });
-            return Ok(claims);
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            _accountService.UpdateProfile(email, profile);
+            return NoContent();
         }
 
 
