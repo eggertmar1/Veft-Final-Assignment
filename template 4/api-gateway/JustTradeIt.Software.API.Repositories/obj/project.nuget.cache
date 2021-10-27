@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ysnkE/0SR3Xu3VVD3iyabrckqNQawS1vN0BxTL/xVqI8hkUBxdZAgOT5c5abHW6HdChdKTjyIEVnDopoef0X4A==",
+  "dgSpecHash": "3bkEkmksVATC95R6v9RRj/sGkDWtWK8EaJa1WA78CWVRR4L/BJqbn2oYoBqxPKykknbwTccIYbyzrnaIAcwEXQ==",
   "success": true,
   "projectFilePath": "/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Repositories/JustTradeIt.Software.API.Repositories.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.extensions.options/5.0.0/microsoft.extensions.options.5.0.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",

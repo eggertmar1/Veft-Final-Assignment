@@ -1,4 +1,5 @@
 using JustTradeIt.Software.API.Models.Entities;
+using JustTradeIt.Software.API.Models.Exceptions;
 using JustTradeIt.Software.API.Repositories.Contexts;
 using JustTradeIt.Software.API.Repositories.Interfaces;
 
@@ -24,11 +25,9 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
         {
             var token = _dbContext.JwtTokens.Find(tokenId);
             if(token == null) {
-                throw new System.Exception();
+                throw new ResourceNotFoundException();
             } 
-            return token.Blacklisted;
-
-            
+            return token.Blacklisted;  
         }
 
         public void VoidToken(int tokenId)

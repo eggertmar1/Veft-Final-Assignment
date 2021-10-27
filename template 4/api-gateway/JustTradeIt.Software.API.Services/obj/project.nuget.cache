@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bqMwtNU+X7Gjgh7R6lKBgGmRiosjdTou42zy6u+8bHnZX+WXXWWME7pS1NmozHXOeRH6p75SHIdHVeJLXsVoVA==",
+  "dgSpecHash": "gBqrG4aFLAWeb1Llf8yGsoJKR+WLZJa1Ib/Y6JxXpERu11FGmgkFETDKFNa3LREmCwAq40Tzng3lvMR/FbcY0A==",
   "success": true,
   "projectFilePath": "/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Services/JustTradeIt.Software.API.Services.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.identitymodel.logging/6.13.1/microsoft.identitymodel.logging.6.13.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.identitymodel.tokens/6.13.1/microsoft.identitymodel.tokens.6.13.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/rabbitmq.client/6.2.2/rabbitmq.client.6.2.2.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
