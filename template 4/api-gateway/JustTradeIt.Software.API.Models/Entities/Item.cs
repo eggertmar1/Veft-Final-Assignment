@@ -10,7 +10,8 @@ namespace JustTradeIt.Software.API.Models.Entities
         public string Description { get; set; }
         public string ShortDescription { get; set; }
         public int ItemConditionId { get; set; }
-        public int OnverId { get; set; }
+        public int OwnerId { get; set; }
+        public bool Deleted { get; set; }
 
         // Navigation properties
         // TODO: Find out if navigation properties are correct.
