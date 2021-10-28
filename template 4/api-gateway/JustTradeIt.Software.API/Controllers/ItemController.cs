@@ -42,7 +42,8 @@ namespace JustTradeIt.Software.API.Controllers
         public IActionResult AddNewItem([FromBody] ItemInputModel item)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            throw new NotImplementedException();
+            var new_stuff = _itemService.AddNewItem(email, item);
+            return CreatedAtRoute("GetItemByIdentifier", new {identifier = new_stuff}, null);
         }
 
         [HttpDelete]
