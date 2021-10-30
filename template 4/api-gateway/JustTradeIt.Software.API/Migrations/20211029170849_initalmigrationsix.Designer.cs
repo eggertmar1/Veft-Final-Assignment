@@ -3,14 +3,16 @@ using System;
 using JustTradeIt.Software.API.Repositories.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JustTradeIt.Software.API.Migrations
 {
     [DbContext(typeof(JustTradeItDbContext))]
-    partial class JustTradeItDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211029170849_initalmigrationsix")]
+    partial class initalmigrationsix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1129,7 +1129,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "JustTradeIt.Software.API.Models": "1.0.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "5.0.10",
-          "Microsoft.EntityFrameworkCore": "5.0.10"
+          "Microsoft.EntityFrameworkCore": "5.0.11"
         },
         "compile": {
           "bin/placeholder/JustTradeIt.Software.API.Repositories.dll": {}
@@ -2984,6 +2984,7 @@
       "JustTradeIt.Software.API.Services >= 1.0.0",
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.11",
+      "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.10",
       "Newtonsoft.Json >= 13.0.1",
@@ -3055,6 +3056,10 @@
             "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[5.0.11, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.11, )"
           },

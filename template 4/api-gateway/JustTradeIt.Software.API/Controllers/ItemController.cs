@@ -26,14 +26,17 @@ namespace JustTradeIt.Software.API.Controllers
         [Route("")]
         public IActionResult GetItems([FromQuery] int pageSize = 10, [FromQuery] int pageNumber = 1, [FromQuery] bool ascendingSortOrder = false)
         {
-            throw new NotImplementedException();
+            return Ok(_itemService.GetItems(pageSize, pageNumber, ascendingSortOrder));
+     
         }
         
         [HttpGet]
         [Route("{identifier}", Name = "GetItemByIdentifier")]
         public IActionResult GetItemByIdentifier([FromRoute] string identifier)
         {
-            throw new NotImplementedException();
+            var something = _itemService.GetItemByIdentifier(identifier);
+            // TODO: Fix "images": null, "numberOfActiveTradeRequests": 0, "condition": null,  "owner": null
+            return Ok(something);
         }
 
         [HttpPost]
@@ -51,7 +54,8 @@ namespace JustTradeIt.Software.API.Controllers
         public IActionResult RemoveItem([FromRoute] string identifier)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            throw new NotImplementedException();
+            _itemService.RemoveItem(email, identifier);
+            return NoContent();
         }
 
 

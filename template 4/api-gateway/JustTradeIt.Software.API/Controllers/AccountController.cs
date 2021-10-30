@@ -50,12 +50,9 @@ namespace JustTradeIt.Software.API.Controllers
         [Route("profile")]
         public IActionResult GetProfileInformation()
         {
-            var claims = User.Claims.Select(c => new
-            {
-                Type = c.Type,
-                Value = c.Value
-            });
-            return Ok(claims);
+            var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            
+            return Ok(_accountService.GetProfileInformation(email));
         }
 
         [HttpPut]
@@ -68,7 +65,7 @@ namespace JustTradeIt.Software.API.Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
         [Route("logout")]
         public IActionResult LogOut()
         {
@@ -76,7 +73,6 @@ namespace JustTradeIt.Software.API.Controllers
             _accountService.Logout(tokenId);
             return NoContent();
         }
-
     }
     
 }

@@ -41,6 +41,7 @@
           "JustTradeIt.Software.API.Services": "1.0.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.11",
+          "Microsoft.EntityFrameworkCore": "5.0.11",
           "Microsoft.EntityFrameworkCore.Design": "5.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite": "5.0.10",
           "Newtonsoft.Json": "13.0.1",
