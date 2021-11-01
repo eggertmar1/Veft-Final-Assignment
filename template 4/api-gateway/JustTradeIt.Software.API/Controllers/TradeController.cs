@@ -35,14 +35,16 @@ namespace JustTradeIt.Software.API.Controllers
         public IActionResult CreateTradeRequest([FromBody] TradeInputModel tradeRequest)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            throw new NotImplementedException();
+            var trade = _tradeservice.CreateTradeRequest(email, tradeRequest);
+            return CreatedAtRoute("GetItemByIdentifier", new {identifier = trade}, null);
         }
 
         [HttpGet]
         [Route("{tradeIdentifier}", Name = "GetTradeByIdentifier")]
         public IActionResult GetTradeByIdentifier([FromRoute] string tradeIdentifier)
         {
-            throw new NotImplementedException();
+            var trade = _tradeservice.GetTradeByIdentifer(tradeIdentifier);
+            return Ok(trade);
         }
 
         //TODO: FromBody placed in the right place? CONFIRM
