@@ -1,3 +1,4 @@
+using System;
 using AutoMapper;
 using JustTradeIt.Software.API.Models.Dtos;
 using JustTradeIt.Software.API.Models.Entities;
@@ -12,6 +13,7 @@ namespace JustTradeIt.Software.API.Profiles
 			CreateMap<RegisterInputModel, User>();
             CreateMap<User, UserDto>()
                 .ForMember(dest => dest.Identifier, opt => opt.MapFrom(src => src.PublicIdentifier));
+			CreateMap<TradeInputModel, Trade>();
 			CreateMap<Trade, TradeDto>()
 				.ForMember(dest => dest.Identifier, opt => opt.MapFrom(src => src.PublicIdentifier))
 				.ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.TradeStatus));

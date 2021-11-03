@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using JustTradeIt.Software.API.Models.InputModels;
 using JustTradeIt.Software.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -22,7 +23,6 @@ namespace JustTradeIt.Software.API.Controllers
             _tokenService = tokenService;
         }
 
-        //TODO: Fix register so that it fits with model
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
@@ -44,8 +44,6 @@ namespace JustTradeIt.Software.API.Controllers
             return Ok(_tokenService.GenerateJwtToken(user));
         }
 
-
-        //TODO: Fix get and put calls to profile 
         [HttpGet]
         [Route("profile")]
         public IActionResult GetProfileInformation()
@@ -57,11 +55,11 @@ namespace JustTradeIt.Software.API.Controllers
 
         [HttpPut]
         [Route("profile")]
-        public IActionResult UpdateProfile([FromForm] ProfileInputModel profile)
+        public async Task<IActionResult> UpdateProfile([FromForm] ProfileInputModel profile)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            _accountService.UpdateProfile(email, profile);
-            return NoContent();
+            await _accountService.UpdateProfile(email, profile);
+            return Ok();
         }
 
 

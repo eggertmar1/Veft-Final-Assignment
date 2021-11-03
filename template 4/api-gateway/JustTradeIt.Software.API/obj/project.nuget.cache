@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Excw/1xjlIdVu2zdNAcpCaOazMhXBJtBPU/jQ0BurznaCWkiB95K76qpVMQOrY83rcFSi21nnmD6BUahmbkEPw==",
+  "dgSpecHash": "tmP8rld7AZg8a/6a6UAxkbbdypK8a55fSAobzcNdMrnmhRa3T/CcJ+351o4b+nMIhJEjygtNGUhfNE9N5N/4vw==",
   "success": true,
   "projectFilePath": "/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API/JustTradeIt.Software.API.csproj",
   "expectedPackageFiles": [
     "/Users/eggertsigtryggsson/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/awssdk.core/3.7.3.20/awssdk.core.3.7.3.20.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/awssdk.s3/3.7.3.13/awssdk.s3.3.7.3.13.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/awssdk.core/3.7.3.30/awssdk.core.3.7.3.30.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/awssdk.s3/3.7.3.23/awssdk.s3.3.7.3.23.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

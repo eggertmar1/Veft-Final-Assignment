@@ -25,7 +25,7 @@ namespace JustTradeIt.Software.API.Middlewares
                         context.Response.ContentType = "application/json";
 
                         if (exception is ResourceAlreadyExistsException)
-                            statusCode = HttpStatusCode.UnprocessableEntity;
+                            statusCode = HttpStatusCode.Conflict;
                         else if (exception is ForbiddenException)
                             statusCode = HttpStatusCode.Forbidden;
                         else if (exception is InvalidRequestException)

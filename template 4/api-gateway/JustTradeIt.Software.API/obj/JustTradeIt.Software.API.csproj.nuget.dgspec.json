@@ -279,7 +279,7 @@
           "dependencies": {
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[3.7.3.13, )"
+              "version": "[3.7.3.23, )"
             },
             "AutoMapper": {
               "target": "Package",

@@ -29,7 +29,7 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "AWSSDK.Core/3.7.3.20": {
+      "AWSSDK.Core/3.7.3.30": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
@@ -38,10 +38,10 @@
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.7.3.13": {
+      "AWSSDK.S3/3.7.3.23": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.7.3.20, 4.0.0)"
+          "AWSSDK.Core": "[3.7.3.30, 4.0.0)"
         },
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
@@ -1192,15 +1192,15 @@
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
-    "AWSSDK.Core/3.7.3.20": {
-      "sha512": "e7cWjwfYQx4b1wes/OMQLuJHUQeAr3uGj8qNl9Itw0S32HyaMDkDQcFKT4aVfTsBK3FSMhLULR2BjoZ2IC5z4w==",
+    "AWSSDK.Core/3.7.3.30": {
+      "sha512": "IFZMfL3a+CjvRGvH6y7EoNP5XY8UcypunRBvTtuTMxnl/r7ZARpKGIOKe2bogmcHZIlPNI6SOoJ/RYhKy8jk4w==",
       "type": "package",
-      "path": "awssdk.core/3.7.3.20",
+      "path": "awssdk.core/3.7.3.30",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.7.3.20.nupkg.sha512",
+        "awssdk.core.3.7.3.30.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/net35/AWSSDK.Core.dll",
         "lib/net35/AWSSDK.Core.pdb",
@@ -1217,16 +1217,16 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.S3/3.7.3.13": {
-      "sha512": "nW0+aZOE4W/BRd1MJcbHTAjNZQ+mOKbbiiZa8YQ6TWMzf2MixIOor2m5yYVQLF2dATBh42x0mMUmRvnBHBOn7A==",
+    "AWSSDK.S3/3.7.3.23": {
+      "sha512": "x2pr6LGhjULMbldqqSk08nzEfxGg22E7ad7fJCgN0K68ovQByjutI9nqzWXREXaQikTXOJeLhRFcIrqryyIBUQ==",
       "type": "package",
-      "path": "awssdk.s3/3.7.3.13",
+      "path": "awssdk.s3/3.7.3.23",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
-        "awssdk.s3.3.7.3.13.nupkg.sha512",
+        "awssdk.s3.3.7.3.23.nupkg.sha512",
         "awssdk.s3.nuspec",
         "lib/net35/AWSSDK.S3.dll",
         "lib/net35/AWSSDK.S3.pdb",
@@ -2976,7 +2976,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "AWSSDK.S3 >= 3.7.3.13",
+      "AWSSDK.S3 >= 3.7.3.23",
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "JustTradeIt.Software.API.Models >= 1.0.0",
@@ -3041,7 +3041,7 @@
         "dependencies": {
           "AWSSDK.S3": {
             "target": "Package",
-            "version": "[3.7.3.13, )"
+            "version": "[3.7.3.23, )"
           },
           "AutoMapper": {
             "target": "Package",

@@ -21,7 +21,6 @@ namespace JustTradeIt.Software.API.Controllers
             _tradeservice = tradeService;
             _userService = userService; // might not have to be here idk..
         }
-        //TODO: Require authentication FOR ALL ROUTES
         [HttpGet]
         [Route("")]
         public IActionResult GetTrades([FromQuery] bool onlyCompleted, [FromQuery] bool onlyIncludeActive)
@@ -47,9 +46,7 @@ namespace JustTradeIt.Software.API.Controllers
             return Ok(trade);
         }
 
-        //TODO: FromBody placed in the right place? CONFIRM
-
-        [HttpPut]
+        [HttpPatch]
         [Route("{tradeIdentifier}", Name = "UpdateTradeRequest")]
         public IActionResult UpdateTradeRequest([FromRoute] string tradeIdentifier, [FromBody] string email, string status)
         {
