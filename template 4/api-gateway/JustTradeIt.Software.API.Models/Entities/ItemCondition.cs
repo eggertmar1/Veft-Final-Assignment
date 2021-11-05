@@ -10,6 +10,6 @@ namespace JustTradeIt.Software.API.Models.Entities
 
         // Navigation properties
         // TODO: Find out if navigation properties are correct.
-        public List<Item> Items { get; set; }
+        
     }
 }

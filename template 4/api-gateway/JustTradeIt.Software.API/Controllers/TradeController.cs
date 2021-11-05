@@ -26,7 +26,8 @@ namespace JustTradeIt.Software.API.Controllers
         public IActionResult GetTrades([FromQuery] bool onlyCompleted, [FromQuery] bool onlyIncludeActive)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            throw new NotImplementedException();
+            if (onlyCompleted){ return Ok(_tradeservice.GetTrades(email)); }
+            return Ok(_tradeservice.GetTradeRequests(email, onlyIncludeActive));
         }
 
         [HttpPost]

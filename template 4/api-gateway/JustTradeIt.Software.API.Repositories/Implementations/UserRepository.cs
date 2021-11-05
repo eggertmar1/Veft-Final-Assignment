@@ -48,8 +48,8 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
             _dbContext.JwtTokens.Add(token);
             _dbContext.SaveChanges();
             var entity = _mapper.Map<User>(inputModel);
+            
             entity.PublicIdentifier = Guid.NewGuid().ToString();
-
             entity.HashedPassword = HashHelper.HashPassword(inputModel.Password, entity.Email);
             _dbContext.Users.Add(entity);
             _dbContext.SaveChanges();

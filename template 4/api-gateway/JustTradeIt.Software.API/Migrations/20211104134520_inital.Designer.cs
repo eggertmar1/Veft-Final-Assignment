@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JustTradeIt.Software.API.Migrations
 {
     [DbContext(typeof(JustTradeItDbContext))]
-    [Migration("20211029143602_initalmigrationthree")]
-    partial class initalmigrationthree
+    [Migration("20211104134520_inital")]
+    partial class inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,7 @@ namespace JustTradeIt.Software.API.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ItemConditionId")
+                    b.Property<int>("ItemConditionId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("OwnerId")
@@ -84,8 +84,6 @@ namespace JustTradeIt.Software.API.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ItemId");
 
                     b.ToTable("ItemImages");
                 });
@@ -196,7 +194,9 @@ namespace JustTradeIt.Software.API.Migrations
                 {
                     b.HasOne("JustTradeIt.Software.API.Models.Entities.ItemCondition", "ItemCondition")
                         .WithMany()
-                        .HasForeignKey("ItemConditionId");
+                        .HasForeignKey("ItemConditionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("JustTradeIt.Software.API.Models.Entities.User", "Owner")
                         .WithMany("Items")
@@ -207,15 +207,6 @@ namespace JustTradeIt.Software.API.Migrations
                     b.Navigation("ItemCondition");
 
                     b.Navigation("Owner");
-                });
-
-            modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.ItemImage", b =>
-                {
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Item", null)
-                        .WithMany("ItemImages")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.Trade", b =>
@@ -231,29 +222,33 @@ namespace JustTradeIt.Software.API.Migrations
 
             modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.TradeItem", b =>
                 {
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Item", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Item", "Item")
                         .WithMany("TradeItems")
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Trade", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Trade", "Trade")
                         .WithMany("TradeItems")
                         .HasForeignKey("TradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.User", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.User", "User")
                         .WithMany("TradeItems")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Trade");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.Item", b =>
                 {
-                    b.Navigation("ItemImages");
-
                     b.Navigation("Trade");
 
                     b.Navigation("TradeItems");

@@ -8,6 +8,6 @@ namespace JustTradeIt.Software.API.Models.Dtos
         public DateTime IssuedDate { get; set; } 
         public DateTime ModifiedDate { get; set; } 
         public string ModifiedBy { get; set; } 
-        public string Status { get; set; } //TODO: Enums TrateStatus
+        public string Status { get; set; } 
     }
 }

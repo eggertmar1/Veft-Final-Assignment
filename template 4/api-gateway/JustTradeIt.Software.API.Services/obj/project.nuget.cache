@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gBqrG4aFLAWeb1Llf8yGsoJKR+WLZJa1Ib/Y6JxXpERu11FGmgkFETDKFNa3LREmCwAq40Tzng3lvMR/FbcY0A==",
+  "dgSpecHash": "P6RIj5TwmwBTf19L/gobO/Tw/nNg6IMLwq+q1v7dFEKy0dzlNKei84DOVPtcS6AOjS7djNd1oQm8OJ/FT3nnMQ==",
   "success": true,
   "projectFilePath": "/Users/eggertsigtryggsson/Documents/Vefþjónustur/Final_assignment/template 4/api-gateway/JustTradeIt.Software.API.Services/JustTradeIt.Software.API.Services.csproj",
   "expectedPackageFiles": [
@@ -15,9 +15,9 @@
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore/5.0.10/microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.10/microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
-    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.10/microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore/5.0.11/microsoft.entityframeworkcore.5.0.11.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.11/microsoft.entityframeworkcore.abstractions.5.0.11.nupkg.sha512",
+    "/Users/eggertsigtryggsson/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.11/microsoft.entityframeworkcore.analyzers.5.0.11.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.extensions.caching.memory/5.0.0/microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "/Users/eggertsigtryggsson/.nuget/packages/microsoft.extensions.configuration/5.0.0/microsoft.extensions.configuration.5.0.0.nupkg.sha512",

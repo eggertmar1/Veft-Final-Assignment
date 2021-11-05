@@ -8,6 +8,7 @@ using JustTradeIt.Software.API.Models.Exceptions;
 using JustTradeIt.Software.API.Models.InputModels;
 using JustTradeIt.Software.API.Repositories.Contexts;
 using JustTradeIt.Software.API.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace JustTradeIt.Software.API.Repositories.Implementations
 {
@@ -40,68 +41,59 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
 
 
             var entity = _mapper.Map<Item>(item);
-            entity.Identifier = new Guid().ToString();
-            entity.ItemConditionId = conditionCode.Id;
+            entity.PublicIdentifier = Guid.NewGuid().ToString();
+            entity.ItemCondition= conditionCode;
             entity.OwnerId = user.Id;
+            
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
 
-            foreach(var image in entity.ItemImages) {
+            foreach(var image in item.ItemImages) {
                 _dbContext.ItemImages.Add(new ItemImage 
                 {
-                ImageUrl = image.ImageUrl,
-                ItemId = entity.Id
-
+                    ImageUrl = image,
+                    ItemId = entity.Id,
                 });
             }
             _dbContext.SaveChanges();
-            return entity.Identifier;
-
-
-
-            
-
-
-
+            return entity.PublicIdentifier;
         }
-
-
-        // {
-        //     if (_dbContext.Users.FirstOrDefault(c => c.Email == inputModel.Email) != null)
-        //     {
-        //         throw new ResourceAlreadyExistsException();
-        //     }
-        //     var token = new JwtToken{Blacklisted = false};
-        //     _dbContext.JwtTokens.Add(token);
-        //     _dbContext.SaveChanges();
-        //     var entity = _mapper.Map<User>(inputModel);
-        //     entity.PublicIdentifier = Guid.NewGuid().ToString();
-
-        //     entity.HashedPassword = HashHelper.HashPassword(inputModel.Password, entity.Email);
-        //     _dbContext.Users.Add(entity);
-        //     _dbContext.SaveChanges();
-        //     var dto =_mapper.Map<UserDto>(entity);
-        //     dto.TokenId = token.Id;
-        //     return dto;
-        // } 
-        
-
-
 
 
         public Envelope<ItemDto> GetAllItems(int pageSize, int pageNumber, bool ascendingSortOrder)
         {
-            throw new NotImplementedException();
+            var items = _dbContext.Items.Where(i => i.Deleted == false).ToList();
+            var bleh = items.Select( item =>
+            {
+                var dto = _mapper.Map<ItemDto>(item);
+                dto.Owner = _mapper.Map<UserDto>(_dbContext.Users.Find(item.OwnerId));
+                return dto;
+            });
+            if (items == null) {throw new ResourceNotFoundException();}
+            bleh = ascendingSortOrder ? bleh.OrderBy(i => i.Title) : bleh.OrderByDescending(i => i.Title);
+            return new Envelope<ItemDto>(pageNumber, pageSize, bleh);
         }
 
         public ItemDetailsDto GetItemByIdentifier(string identifier)
         {
-            throw new NotImplementedException();
+            var item = _dbContext.Items
+                .FirstOrDefault( c => c.PublicIdentifier == identifier);
+            if(item == null) {throw new ResourceNotFoundException();}
+            if(item.Deleted) {throw new ResourceNotFoundException("Item has been deleted");} //TODO: ItemDeletedException()
+            var dto = _mapper.Map<ItemDetailsDto>(item);
+            dto.Owner = _mapper.Map<UserDto>(_dbContext.Users.Find(item.OwnerId));
+            dto.Images = _dbContext.ItemImages.Where( c => c.ItemId == item.Id).Select( t => _mapper.Map<ImageDto>(t));
+            dto.Condition = _dbContext.ItemConditions.Find(item.ItemConditionId).ConditionCode;
+            return dto;
+
         }
 
         public void RemoveItem(string email, string identifier)
         {
-            throw new NotImplementedException();
+            var item = _dbContext.Items.FirstOrDefault( c => c.PublicIdentifier == identifier);
+            if(item == null) {throw new ResourceNotFoundException();}
+            //FIXME: Fix delete :D
+            item.Deleted = true;
         }
     }
 }

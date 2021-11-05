@@ -220,23 +220,29 @@ namespace JustTradeIt.Software.API.Migrations
 
             modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.TradeItem", b =>
                 {
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Item", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Item", "Item")
                         .WithMany("TradeItems")
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Trade", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.Trade", "Trade")
                         .WithMany("TradeItems")
                         .HasForeignKey("TradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JustTradeIt.Software.API.Models.Entities.User", null)
+                    b.HasOne("JustTradeIt.Software.API.Models.Entities.User", "User")
                         .WithMany("TradeItems")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Trade");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("JustTradeIt.Software.API.Models.Entities.Item", b =>

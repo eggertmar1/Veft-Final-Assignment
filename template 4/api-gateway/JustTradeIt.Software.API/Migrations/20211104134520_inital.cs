@@ -1,10 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace JustTradeIt.Software.API.Migrations
 {
-    public partial class initial : Migration
+    public partial class inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +11,10 @@ namespace JustTradeIt.Software.API.Migrations
                 name: "ItemConditions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ConditionCode = table.Column<string>(type: "text", nullable: true),
-                    Description = table.Column<string>(type: "text", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ConditionCode = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -23,12 +22,26 @@ namespace JustTradeIt.Software.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ItemImages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ImageUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    ItemId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ItemImages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "JwtTokens",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Blacklisted = table.Column<bool>(type: "boolean", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Blacklisted = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,13 +52,13 @@ namespace JustTradeIt.Software.API.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PublicIdentifier = table.Column<string>(type: "text", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    Email = table.Column<string>(type: "text", nullable: true),
-                    ProfileImageUrl = table.Column<string>(type: "text", nullable: true),
-                    HashedPassword = table.Column<string>(type: "text", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PublicIdentifier = table.Column<string>(type: "TEXT", nullable: true),
+                    FullName = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    ProfileImageUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    HashedPassword = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,15 +69,15 @@ namespace JustTradeIt.Software.API.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Identifier = table.Column<string>(type: "text", nullable: true),
-                    Title = table.Column<string>(type: "text", nullable: true),
-                    Description = table.Column<string>(type: "text", nullable: true),
-                    ShortDescription = table.Column<string>(type: "text", nullable: true),
-                    ItemConditionId = table.Column<int>(type: "integer", nullable: false),
-                    OnverId = table.Column<int>(type: "integer", nullable: false),
-                    UserId = table.Column<int>(type: "integer", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PublicIdentifier = table.Column<string>(type: "TEXT", nullable: true),
+                    Title = table.Column<string>(type: "TEXT", nullable: true),
+                    Description = table.Column<string>(type: "TEXT", nullable: true),
+                    ShortDescription = table.Column<string>(type: "TEXT", nullable: true),
+                    OwnerId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Deleted = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ItemConditionId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,29 +89,9 @@ namespace JustTradeIt.Software.API.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Items_Users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Items_Users_OwnerId",
+                        column: x => x.OwnerId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ItemImages",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ImageUrl = table.Column<string>(type: "text", nullable: true),
-                    ItemId = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ItemImages", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ItemImages_Items_ItemId",
-                        column: x => x.ItemId,
-                        principalTable: "Items",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -107,17 +100,17 @@ namespace JustTradeIt.Software.API.Migrations
                 name: "Trades",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PublicIdentifier = table.Column<string>(type: "text", nullable: true),
-                    IssuedDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    TradeStatus = table.Column<string>(type: "text", nullable: true),
-                    ReceiverId = table.Column<int>(type: "integer", nullable: false),
-                    SenderId = table.Column<int>(type: "integer", nullable: false),
-                    ItemId = table.Column<int>(type: "integer", nullable: true),
-                    UserId = table.Column<int>(type: "integer", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PublicIdentifier = table.Column<string>(type: "TEXT", nullable: true),
+                    IssuedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "TEXT", nullable: true),
+                    TradeStatus = table.Column<string>(type: "TEXT", nullable: true),
+                    ReceiverId = table.Column<int>(type: "INTEGER", nullable: false),
+                    SenderId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItemId = table.Column<int>(type: "INTEGER", nullable: true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -140,9 +133,9 @@ namespace JustTradeIt.Software.API.Migrations
                 name: "TradeItems",
                 columns: table => new
                 {
-                    TradeId = table.Column<int>(type: "integer", nullable: false),
-                    UserId = table.Column<int>(type: "integer", nullable: false),
-                    ItemId = table.Column<int>(type: "integer", nullable: false)
+                    TradeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItemId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -168,19 +161,14 @@ namespace JustTradeIt.Software.API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ItemImages_ItemId",
-                table: "ItemImages",
-                column: "ItemId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Items_ItemConditionId",
                 table: "Items",
                 column: "ItemConditionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Items_UserId",
+                name: "IX_Items_OwnerId",
                 table: "Items",
-                column: "UserId");
+                column: "OwnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TradeItems_ItemId",
