@@ -33,6 +33,7 @@ namespace JustTradeIt.Software.API.Controllers
         [Route("{identifier}", Name = "GetItemByIdentifier")]
         public IActionResult GetItemByIdentifier([FromRoute] string identifier)
         {
+            System.Console.WriteLine("GetItemByIdentifier" , identifier);
             var something = _itemService.GetItemByIdentifier(identifier);
             return Ok(something);
         }

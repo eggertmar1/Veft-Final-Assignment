@@ -45,7 +45,7 @@ namespace JustTradeIt.Software.API
             {
                 config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtTokenAuthentication(Configuration); // Middleware? 
+            }).AddJwtTokenAuthentication(Configuration); 
 
             var jwtConfig = Configuration.GetSection("JwtConfig");
             services.AddTransient<ITokenService>((c) =>
