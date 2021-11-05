@@ -11,7 +11,7 @@ namespace JustTradeIt.Software.API.Controllers
     [ApiController]
     [Route("api/account")]
     [Authorize]
-    
+    /// <summary> Authorized for all endpoints except for the login and register endpoint. </summary>
     public class AccountController : ControllerBase
     {
         private readonly IAccountService _accountService;

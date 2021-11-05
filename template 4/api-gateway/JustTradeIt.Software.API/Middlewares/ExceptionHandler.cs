@@ -32,6 +32,8 @@ namespace JustTradeIt.Software.API.Middlewares
                             statusCode = HttpStatusCode.BadRequest;
                         else if (exception is ResourceNotFoundException)
                             statusCode = HttpStatusCode.NotFound;
+                        else if (exception is BadRequestException)
+                            statusCode = HttpStatusCode.BadRequest;
                         else 
                             message = "An error has occurred, please try again later";
 

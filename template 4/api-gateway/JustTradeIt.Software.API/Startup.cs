@@ -46,7 +46,7 @@ namespace JustTradeIt.Software.API
                 config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtTokenAuthentication(Configuration); 
-
+            
             var jwtConfig = Configuration.GetSection("JwtConfig");
             services.AddTransient<ITokenService>((c) =>
                 new TokenService(
@@ -54,7 +54,7 @@ namespace JustTradeIt.Software.API
                     jwtConfig.GetSection("expirationInMinutes").Value,
                     jwtConfig.GetSection("issuer").Value,
                     jwtConfig.GetSection("audience").Value));
-        
+            // register dependencies
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IImageService, ImageService>();
             services.AddTransient<IItemService, ItemService>();

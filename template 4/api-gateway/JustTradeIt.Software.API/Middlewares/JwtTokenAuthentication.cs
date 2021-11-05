@@ -15,6 +15,7 @@ namespace JustTradeIt.Software.API.Middlewares
         public static AuthenticationBuilder AddJwtTokenAuthentication(this AuthenticationBuilder builder,
             IConfiguration config)
         {
+            // Set up the Jwt Bearer authentication scheme
             var jwtConfig = config.GetSection("JwtConfig");
             var secret = jwtConfig.GetSection("secret").Value;
             var issuer = jwtConfig.GetSection("issuer").Value;
