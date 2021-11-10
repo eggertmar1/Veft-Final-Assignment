@@ -16,6 +16,7 @@ namespace JustTradeIt.Software.API.Models.InputModels
 
         [Required]
         [RegularExpression(@"^(MINT|GOOD|USED|BAD|DAMAGED)$")]
+        // using regex to validate the enum value
         public string ConditionCode{ get; set; }
 
         public IEnumerable<string> ItemImages { get; set; }

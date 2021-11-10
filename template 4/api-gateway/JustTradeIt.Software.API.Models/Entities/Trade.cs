@@ -8,6 +8,7 @@ namespace JustTradeIt.Software.API.Models.Entities
     {
         public int Id { get; set; }
         public string PublicIdentifier { get; set; }
+        [ForeignKey("PublicIdentifier")]
         public DateTime IssuedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public string ModifiedBy { get; set; }
@@ -15,11 +16,6 @@ namespace JustTradeIt.Software.API.Models.Entities
         public int ReceiverId { get; set; }  
         public int SenderId { get; set; } 
 
-        // Navigation properties
-        // [ForeignKey("SenderId")]
-        // public virtual User Sender { get; set; }
-        // [ForeignKey("ReceiverId")] 
-        // public virtual User Receiver { get; set; }
         public List<TradeItem> TradeItems { get; set; }
     }
 }

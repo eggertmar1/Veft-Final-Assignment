@@ -18,7 +18,6 @@ namespace JustTradeIt.Software.API.Models.Entities
         public int ItemConditionId { get; set; }
         [ForeignKey("OwnerId")]
         // Navigation properties
-        // TODO: Find out if navigation properties are correct.
         // public List<ItemImage> ItemImages { get; set; }
         public User Owner { get; set; }
         public List<TradeItem> TradeItems { get; set; }

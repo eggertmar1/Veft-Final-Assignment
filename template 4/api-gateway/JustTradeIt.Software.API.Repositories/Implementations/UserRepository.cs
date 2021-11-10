@@ -22,6 +22,9 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
             _mapper = mapper;
         }
 
+        /// <summary> Authenticates a user and returns a UserDto if successful. </summary>
+        /// <param name="userInput"> The user input. </param>
+        /// <returns> The user dto. </returns>
         public UserDto AuthenticateUser(LoginInputModel loginInputModel)
         {
             var user = _dbContext.Users.FirstOrDefault(u =>
@@ -34,22 +37,30 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
             _dbContext.SaveChanges();
             var dto = _mapper.Map<UserDto>(user);
             dto.TokenId = token.Id;
+            _dbContext.SaveChanges();
             return dto;
 
         }
 
+        /// <summary> Creates a user. </summary>
+        /// <param name="userInput"> The user input. </param>
+        /// <returns> The user dto. </returns>
         public UserDto CreateUser(RegisterInputModel inputModel)
         {
+            // Check if user already exists
             if (_dbContext.Users.FirstOrDefault(c => c.Email == inputModel.Email) != null)
             {
                 throw new ResourceAlreadyExistsException();
             }
+            // Create the token for the user
             var token = new JwtToken{Blacklisted = false};
             _dbContext.JwtTokens.Add(token);
             _dbContext.SaveChanges();
+            // map the input model to the entity
             var entity = _mapper.Map<User>(inputModel);
-            
+            // set the public identifier
             entity.PublicIdentifier = Guid.NewGuid().ToString();
+            // hash the password with the email as salt
             entity.HashedPassword = HashHelper.HashPassword(inputModel.Password, entity.Email);
             _dbContext.Users.Add(entity);
             _dbContext.SaveChanges();
@@ -76,6 +87,8 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
             return _mapper.Map<UserDto>(user);
         }
 
+        /// <summary> Updates a user. </summary>
+        /// <param name="userInput"> The user input. </param>
         public void UpdateProfile(string email, string profileImageUrl, ProfileInputModel profile)
         {
             var user = _dbContext.Users.FirstOrDefault(c => c.Email == email);
@@ -83,7 +96,6 @@ namespace JustTradeIt.Software.API.Repositories.Implementations
             {
                 throw new ResourceNotFoundException();
             }
-            
             user.ProfileImageUrl = profileImageUrl;
             user.FullName = profile.Fullname;
             _dbContext.Users.Update(user);

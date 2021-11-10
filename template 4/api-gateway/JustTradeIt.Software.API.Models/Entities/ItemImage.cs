@@ -5,8 +5,6 @@ namespace JustTradeIt.Software.API.Models.Entities
         public int Id { get; set; }
         public string ImageUrl { get; set; }
         public int ItemId { get; set; }
-
-        //TODO: Check for navigation links
         
     }
 }

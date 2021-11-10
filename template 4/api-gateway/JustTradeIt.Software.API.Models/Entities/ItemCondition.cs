@@ -7,9 +7,5 @@ namespace JustTradeIt.Software.API.Models.Entities
         public int Id { get; set; }
         public string ConditionCode { get; set; }
         public string Description { get; set; }
-
-        // Navigation properties
-        // TODO: Find out if navigation properties are correct.
-        
     }
 }
