@@ -11,6 +11,7 @@ namespace JustTradeIt.Software.API.Services.Implementations
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly ITradeRepository _tradeRepository;
         public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
@@ -19,13 +20,13 @@ namespace JustTradeIt.Software.API.Services.Implementations
 
         public UserDto GetUserInformation(string identifier)
         {
-            return _userRepository.GetProfileInformation(identifier);
+            return _userRepository.GetUserInformation(identifier);
         }
 
         public IEnumerable<TradeDto> GetUserTrades(string userIdentifier)
         {
             // FIXME: Error here 
-            throw new NotImplementedException();
+            return _tradeRepository.GetUserTrades(userIdentifier);
             // return _userRepository.GetUserInformation(userIdentifier);
         }
     }

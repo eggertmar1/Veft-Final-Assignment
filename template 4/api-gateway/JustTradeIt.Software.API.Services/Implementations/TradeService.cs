@@ -11,6 +11,7 @@ namespace JustTradeIt.Software.API.Services.Implementations
     {
         private readonly ITradeRepository _tradeRepository;
 
+        private readonly IQueueService _queueService;
         public TradeService(ITradeRepository tradeRepository)
         {
             _tradeRepository = tradeRepository;
@@ -18,6 +19,7 @@ namespace JustTradeIt.Software.API.Services.Implementations
 
         public string CreateTradeRequest(string email, TradeInputModel tradeRequest)
         {
+            // _queueService.PublishMessage("create_trade", tradeRequest);
             return _tradeRepository.CreateTradeRequest(email, tradeRequest);
         }
 
@@ -38,12 +40,12 @@ namespace JustTradeIt.Software.API.Services.Implementations
             return _tradeRepository.GetTrades(email);
         }
 
-        public void UpdateTradeRequest(string identifier, string email, string status)
+        public void UpdateTradeRequest(string identifier, string email,  string status)
         {
             // TODO: Check how to use enums here
             // TODO: Publish a message to RabbitMQ with the routing key 
-            // "trade-update-request" and include the required data
-            throw new NotImplementedException();
+            // "trade-update-request" and include the required data.
+            _tradeRepository.UpdateTradeRequest(identifier, email, status);
             // _tradeRepository.UpdateTradeRequest(email, identifier, );
         }
     }

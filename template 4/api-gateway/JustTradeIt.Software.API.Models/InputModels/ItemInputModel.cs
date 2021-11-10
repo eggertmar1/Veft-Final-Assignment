@@ -15,10 +15,10 @@ namespace JustTradeIt.Software.API.Models.InputModels
         public string Description { get; set; }
 
         [Required]
-        //TODO: Validate condition code [MINT, GOOD, USED, BAD, DAMAGED]
+        [RegularExpression(@"^(MINT|GOOD|USED|BAD|DAMAGED)$")]
+        // using regex to validate the enum value
         public string ConditionCode{ get; set; }
 
-        [Url]
         public IEnumerable<string> ItemImages { get; set; }
     }
 }

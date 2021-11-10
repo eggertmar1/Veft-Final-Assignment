@@ -12,7 +12,6 @@ namespace JustTradeIt.Software.API.Models.Entities
         public string HashedPassword { get; set; }
 
         // Navigation properties
-        // TODO: Find out if navigation properties are correct.
         public List<Item> Items { get; set; }
         public List<TradeItem> TradeItems { get; set; }
         public List<Trade> Trades { get; set; }

@@ -33,7 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "JustTradeIt.Software.API/1.0.0": {
         "dependencies": {
-          "AWSSDK.S3": "3.7.3.13",
+          "AWSSDK.S3": "3.7.3.23",
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "JustTradeIt.Software.API.Models": "1.0.0",
@@ -365,25 +365,25 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "AWSSDK.Core/3.7.3.20": {
+      "AWSSDK.Core/3.7.3.30": {
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.7.3.20"
+            "fileVersion": "3.7.3.30"
           }
         },
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.S3/3.7.3.13": {
+      "AWSSDK.S3/3.7.3.23": {
         "dependencies": {
-          "AWSSDK.Core": "3.7.3.20"
+          "AWSSDK.Core": "3.7.3.30"
         },
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.S3.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.7.3.13"
+            "fileVersion": "3.7.3.23"
           }
         },
         "compile": {
@@ -1135,7 +1135,7 @@
       },
       "JustTradeIt.Software.API.Services/1.0.0": {
         "dependencies": {
-          "AWSSDK.S3": "3.7.3.13",
+          "AWSSDK.S3": "3.7.3.23",
           "JustTradeIt.Software.API.Models": "1.0.0",
           "JustTradeIt.Software.API.Repositories": "1.0.0",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "5.0.10",
@@ -2849,19 +2849,19 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/8.1.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512"
     },
-    "AWSSDK.Core/3.7.3.20": {
+    "AWSSDK.Core/3.7.3.30": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-e7cWjwfYQx4b1wes/OMQLuJHUQeAr3uGj8qNl9Itw0S32HyaMDkDQcFKT4aVfTsBK3FSMhLULR2BjoZ2IC5z4w==",
-      "path": "awssdk.core/3.7.3.20",
-      "hashPath": "awssdk.core.3.7.3.20.nupkg.sha512"
+      "sha512": "sha512-IFZMfL3a+CjvRGvH6y7EoNP5XY8UcypunRBvTtuTMxnl/r7ZARpKGIOKe2bogmcHZIlPNI6SOoJ/RYhKy8jk4w==",
+      "path": "awssdk.core/3.7.3.30",
+      "hashPath": "awssdk.core.3.7.3.30.nupkg.sha512"
     },
-    "AWSSDK.S3/3.7.3.13": {
+    "AWSSDK.S3/3.7.3.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-nW0+aZOE4W/BRd1MJcbHTAjNZQ+mOKbbiiZa8YQ6TWMzf2MixIOor2m5yYVQLF2dATBh42x0mMUmRvnBHBOn7A==",
-      "path": "awssdk.s3/3.7.3.13",
-      "hashPath": "awssdk.s3.3.7.3.13.nupkg.sha512"
+      "sha512": "sha512-x2pr6LGhjULMbldqqSk08nzEfxGg22E7ad7fJCgN0K68ovQByjutI9nqzWXREXaQikTXOJeLhRFcIrqryyIBUQ==",
+      "path": "awssdk.s3/3.7.3.23",
+      "hashPath": "awssdk.s3.3.7.3.23.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

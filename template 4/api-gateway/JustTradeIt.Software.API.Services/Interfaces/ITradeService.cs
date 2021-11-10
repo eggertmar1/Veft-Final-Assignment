@@ -38,6 +38,6 @@ namespace JustTradeIt.Software.API.Services.Interfaces
          /// <param name="identifier">The identifier of the trade request</param>
          /// <param name="email">The email of the user changing the request</param>
          /// <param name="status">Resulting status of the trade request</param>
-         void UpdateTradeRequest(string identifier, string email, string status);
+         void UpdateTradeRequest(string identifier, string email,  string status);
     }
 }

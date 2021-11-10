@@ -20,7 +20,6 @@ namespace JustTradeIt.Software.API.Controllers
         {
             _itemService = itemService;
         }
-        //TODO: Require authentication FOR ALL ROUTES
 
         [HttpGet]
         [Route("")]
@@ -34,14 +33,13 @@ namespace JustTradeIt.Software.API.Controllers
         [Route("{identifier}", Name = "GetItemByIdentifier")]
         public IActionResult GetItemByIdentifier([FromRoute] string identifier)
         {
+            System.Console.WriteLine("GetItemByIdentifier" , identifier);
             var something = _itemService.GetItemByIdentifier(identifier);
-            // TODO: Fix "images": null, "numberOfActiveTradeRequests": 0, "condition": null,  "owner": null
             return Ok(something);
         }
 
         [HttpPost]
         [Route("")]
-        //TODO: string email, i'm not sure it's in the right place but no ERRORSS!!
         public IActionResult AddNewItem([FromBody] ItemInputModel item)
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JustTradeIt.Software.API.Models.Entities
 {
@@ -7,16 +8,14 @@ namespace JustTradeIt.Software.API.Models.Entities
     {
         public int Id { get; set; }
         public string PublicIdentifier { get; set; }
+        [ForeignKey("PublicIdentifier")]
         public DateTime IssuedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public string ModifiedBy { get; set; }
         public string TradeStatus { get; set; }
-        public int ReceiverId { get; set; }  // TODO: Maybe: ReceiverIdentifier
-        public int SenderId { get; set; }  // TODO: Maybe: SenderIdentifier
-                                           // This is according to diagram
+        public int ReceiverId { get; set; }  
+        public int SenderId { get; set; } 
 
-        // Navigation properties
-        // TODO: Find out if navigation properties are correct.
         public List<TradeItem> TradeItems { get; set; }
     }
 }

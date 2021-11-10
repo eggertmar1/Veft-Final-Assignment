@@ -6,7 +6,6 @@ namespace JustTradeIt.Software.API.Models.Dtos
         public string FullName { get; set; }
         public string Email { get; set; }
         public string ProfileImageUrl { get; set; }
-        public int TokenId { get; set; } // Can be JSON ignored, 
-                                        // so it won't turn out in response to end-user
-    } // TODO: Find out how to json ignore
+        public int TokenId { get; set; } 
+    } 
 }
